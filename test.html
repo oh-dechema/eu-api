@@ -32,13 +32,7 @@ function postData(url = ``, data = {}) {
   var d = JSON.stringify(data);
   console.log(d);
     return fetch(url, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        headers: {
-            "Content-Type": "application/json; charset=utf-8"
-            // "Content-Type": "application/x-www-form-urlencoded",
-        },
-        redirect: "follow", // manual, *follow, error
-        referrer: "no-referrer", // no-referrer, *client
+        method: "POST", // *GET, POST, PUT, DELETE, etc.        
         body: d, // body data type must match "Content-Type" header
     })
     .then(response => response.json()); // parses response to JSON
