@@ -32,7 +32,7 @@ function firequery(){
 	var query = "orgProfile/publicProjectsByPic.json?pic=";
   fetch(api + query + id)
   .then(response => response.json())
-  .then(data => {document.getElementById("result").innerHTML = (JSON.stringify(data))}) // JSON-string from `response.json()` call
+  .then(data => {document.getElementById("result").innerHTML = (JSON.stringify(data, undefined, 2)}) // JSON-string from `response.json()` call
   .catch(error => console.error(error));
 }
 </script>
