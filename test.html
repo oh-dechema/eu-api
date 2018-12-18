@@ -52,7 +52,7 @@ function showData(data){
     var collaboration = data.collaborations[i];
     console.log(collaboration);
     nodeList.push({id: collaboration.pic, label: collaboration.businessName, title: collaboration.legalName});
-    edgeList.push({from: pic, to: collaboration.pic, length: 10/collaboration.numberOfProjects, width: collaboration.numberOfProjects});
+    edgeList.push({from: pic, to: collaboration.pic, length: 95/collaboration.numberOfProjects, width: collaboration.numberOfProjects});
   }
   console.log(nodeList, edgeList);
   var nodes = new vis.DataSet(nodeList);
@@ -65,7 +65,22 @@ function showData(data){
   var options = {
     interaction:{hover:true},
     manipulation: {
-      enabled: true
+      enabled: false
+    }
+    physics: {
+        adaptiveTimestep: true,
+        barnesHut: {
+            gravitationalConstant: -8000,
+            springConstant: 0.04,
+            springLength: 95
+        },
+        stabilization: {
+            iterations: 300
+        }
+    },
+    layout: {
+        randomSeed: 191006,
+        improvedLayout: false
     }
   };
   var network = new vis.Network(container, data, options);
