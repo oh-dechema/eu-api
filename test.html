@@ -3,7 +3,7 @@
 
 <head>
 <title>EU API</title>
-<<style media="screen">
+<style media="screen">
   pre{
     white-space: pre-wrap;
   }
@@ -32,7 +32,7 @@ function firequery(){
 	var query = "orgProfile/publicProjectsByPic.json?pic=";
   fetch(api + query + id)
   .then(response => response.json())
-  .then(data => {document.getElementById("result").innerHTML = (JSON.stringify(data, undefined, 2)}) // JSON-string from `response.json()` call
+  .then(data => {document.getElementById("result").innerHTML = JSON.stringify(data, undefined, 2)}) // JSON-string from `response.json()` call
   .catch(error => console.error(error));
 }
 </script>
