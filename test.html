@@ -17,6 +17,8 @@
 <body>
 <form>
 <label>id: <input type="text" id="id"></input></label>
+<label>springConstant: <input type="text" id="springConstant">0.04</input></label>
+<label>springLength: <input type="text" id="springLength">5</input></label>
 <button type="button" id="submit">Query</button>
 </form>
 <pre>
@@ -60,6 +62,8 @@ function showData(data){
       nodes: nodes,
       edges: edges
   };
+  var springLength = parseFloat(document.getElementById("springLength").value);
+  var springConstant = parseFloat(document.getElementById("springConstant").value);
   var options = {
     interaction:{hover:true},
     manipulation: {
@@ -69,11 +73,11 @@ function showData(data){
         adaptiveTimestep: true,
         barnesHut: {
             gravitationalConstant: -500,
-            springConstant: 0.08,
-            springLength: 5
+            springConstant: springConstant,
+            springLength: springLength
         },
         stabilization: {
-            iterations: 300
+            iterations: 800
         }
     },
     layout: {
