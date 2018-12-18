@@ -47,6 +47,7 @@ function showData(data){
   var pic = data.publicOrganizationData.pic;
   nodeList.push({id: pic, label: data.publicOrganizationData.businessName, title: data.publicOrganizationData.legalName});
   var edgeList = [];
+  console.log(data);
   for(var i=0;i<data.collaborations.count;i++){
     var collaboration = data.collaborations[i];
     console.log(collaboration);
