@@ -49,9 +49,11 @@ function showData(data){
   var edgeList = [];
   for(var i=0;i<data.collaborations.count;i++){
     var collaboration = data.collaborations[i];
+    console.log(collaboration);
     nodeList.push({id: collaboration.pic, label: collaboration.businessName, title: collaboration.legalName});
     edgeList.push({from: pic, to: collaboration.pic, length: 10/collaboration.numberOfProjects, width: collaboration.numberOfProjects});
   }
+  console.log(nodeList, edgeList);
   var nodes = new vis.DataSet(nodeList);
   var edges = new vis.DataSet(edgeList);
   var container = document.getElementById('mynetwork');
