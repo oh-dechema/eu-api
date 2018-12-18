@@ -22,21 +22,10 @@ function firequery(){
 	console.log("Querying for " + id);
   var api = "https://ec.europa.eu/research/participants/api/";
 	var query = "orgProfile/publicProjectsByPic.json?pic=";
-  postData(api & query, {"id": id})
+  fetch(api + query + id)
+  .then(response => response.json())
   .then(data => {document.getElementById("result").innerHTML = (JSON.stringify(data))}) // JSON-string from `response.json()` call
   .catch(error => console.error(error));
-}
-
-function postData(url = ``, data = {}) {
-  // Default options are marked with *
-
-  var d = JSON.stringify(data);
-  console.log(d);
-    return fetch(url, {
-        method: "POST", // *GET, POST, PUT, DELETE, etc.
-        body: d, // body data type must match "Content-Type" header
-    })
-    .then(response => response.json()); // parses response to JSON
 }
 </script>
 </body>
