@@ -50,7 +50,7 @@ function showData(data){
   for(var i=0;i<data.collaborations.length;i++){
     var collaboration = data.collaborations[i];
     nodeList.push({id: collaboration.pic, label: collaboration.businessName, title: collaboration.legalName});
-    edgeList.push({from: pic, to: collaboration.pic, length: (24/collaboration.numberOfProjects), width: (2*collaboration.numberOfProjects)});
+    edgeList.push({from: pic, to: collaboration.pic, length: (24/collaboration.numberOfProjects), width: (3*collaboration.numberOfProjects)});
   }
   console.log(nodeList, edgeList);
   var nodes = new vis.DataSet(nodeList);
@@ -67,11 +67,17 @@ function showData(data){
     },
     physics: {
         adaptiveTimestep: true,
+        barnesHut: {
+            gravitationalConstant: -500,
+            springConstant: 0.08,
+            springLength: 5
+        },
         stabilization: {
             iterations: 300
         }
     },
     layout: {
+        randomSeed: 191006,
         improvedLayout: false
     }
   };
