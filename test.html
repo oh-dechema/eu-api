@@ -4,12 +4,25 @@
 <head>
 <title>EU API</title>
 <style media="screen">
+  html, body {
+      height:100%
+  }
   pre{
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    width: 60%;
+    height: 40%;
     white-space: pre-wrap;
   }
   #mynetwork {
-    min-height: 600px;
-    height: 80%;
+    width: 100%
+    height: 100%;
+  }
+  .floatLeftTop {
+    position: absolute;
+    left: 10px;
+    top: 10px;
   }
 </style>
 <script src="https://visjs.org/dist/vis.js">
@@ -19,7 +32,7 @@
 </head>
 
 <body>
-<form>
+<form class="floatLeftTop">
 <label>id: <input type="text" id="id"></input></label>
 <button type="button" id="submit">Query</button>
 </form>
