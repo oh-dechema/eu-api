@@ -54,7 +54,7 @@ function showData(data){
   for(var i=0;i<data.collaborations.length;i++){
     var collaboration = data.collaborations[i];
     nodeList.push({id: collaboration.pic, label: collaboration.businessName, title: collaboration.legalName});
-    edgeList.push({from: pic, to: collaboration.pic, length: (240/collaboration.numberOfProjects), width: (3*collaboration.numberOfProjects)});
+    edgeList.push({from: pic, to: collaboration.pic, length: (2400/collaboration.numberOfProjects), width: (3*collaboration.numberOfProjects)});
   }
   console.log(nodeList, edgeList);
   var nodes = new vis.DataSet(nodeList);
@@ -72,8 +72,8 @@ function showData(data){
     physics: {
         adaptiveTimestep: true,
         barnesHut: {
-          "springLength": 240,
-          "springConstant": 0.9,
+          "springLength": 2400,
+          "springConstant": 0.4,
           "damping": 0.9,
           "avoidOverlap": 0.88
         },
