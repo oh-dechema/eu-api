@@ -69,16 +69,16 @@ function showData(data){
         "enabled": false,
         adaptiveTimestep: true,
         barnesHut: {
-          "springConstant": 0.645,
-    "damping": 0.7,
-    "avoidOverlap": 0.88
+          "springLength": 24,
+          "springConstant": 0.9,
+          "damping": 0.7,
+          "avoidOverlap": 0.88
         },
         stabilization: {
-            iterations: 800
+            iterations: 400
         }
     },
     layout: {
-        randomSeed: 191006,
         improvedLayout: false
     }
   };
